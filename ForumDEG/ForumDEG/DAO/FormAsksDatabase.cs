@@ -5,11 +5,11 @@ using System.Threading.Tasks;
 
 namespace ForumDEG.DAO
 {
-    class ForumAsksDatabase
+    class FormAsksDatabase
     {
         readonly SQLiteAsyncConnection _database;
 
-        public ForumAsksDatabase(string databasePath)
+        public FormAsksDatabase(string databasePath)
         {
             _database = new SQLiteAsyncConnection(databasePath);
 
