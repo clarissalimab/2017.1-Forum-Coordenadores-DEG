@@ -5,19 +5,19 @@ using Xamarin.Forms.Xaml;
 namespace ForumDEG.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class AdministratorsPage : ContentPage
+    public partial class CoordinatorsPage : ContentPage
     {
-        public AdministratorsPage()
+        public CoordinatorsPage()
         {
             InitializeComponent();
-            this.Title = "Administrator List";
+            this.Title = "Coordinator List";
 
             var toolbarItem = new ToolbarItem {
                 Text = "+"
             };
 
             toolbarItem.Clicked += async (sender, e) => {
-                await Navigation.PushAsync(new AdministratorAddPage() { BindingContext = new Administrator()});
+                await Navigation.PushAsync(new CoordinatorAddPage() { BindingContext = new Coordinator()});
             };
 
             ToolbarItems.Add(toolbarItem);
@@ -27,13 +27,13 @@ namespace ForumDEG.Views
         {
             base.OnAppearing();
 
-            AdministratorListView.ItemsSource = await App.AdministratorDatabase.GetAllAdministrators();
+            CoordinatorListView.ItemsSource = await App.CoordinatorDatabase.GetAllCoordinators();
         }
 
-        async void Administrator_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        async void Coordinator_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             if(e.SelectedItem != null) {
-                await Navigation.PushAsync(new AdministratorAddPage() { BindingContext = e.SelectedItem as Administrator });
+                await Navigation.PushAsync(new CoordinatorAddPage() { BindingContext = e.SelectedItem as Coordinator });
             }
         }
     }

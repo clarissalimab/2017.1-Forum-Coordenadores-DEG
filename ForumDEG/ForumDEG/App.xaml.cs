@@ -6,14 +6,27 @@ namespace ForumDEG {
     public partial class App : Application {
 
         static AdministratorDatabase _administratorDatabase;
-        //static CoordinatorDatabase _coordinatorDatabase;
+        static CoordinatorDatabase _coordinatorDatabase;
         //static ForumDatabase _forumDatabase;
 
         public App() {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new AdministratorsPage());
+            MainPage = new NavigationPage(new CoordinatorsPage());
+            //MainPage = new NavigationPage(new AdministratorsPage());
             //MainPage = new ForumDEG.MainPage();
+        }
+
+        public static CoordinatorDatabase CoordinatorDatabase
+        {
+            get
+            {
+                if (_coordinatorDatabase == null)
+                {
+                    _coordinatorDatabase = new CoordinatorDatabase(DependencyService.Get<InterfaceSQLite>().GetLocalFilePath("Coordinator.db3"));
+                }
+                return _coordinatorDatabase;
+            }
         }
 
         public static AdministratorDatabase AdministratorDatabase{

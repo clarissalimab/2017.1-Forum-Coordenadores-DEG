@@ -1,4 +1,5 @@
 ﻿using SQLite;
+using SQLiteNetExtensions.Attributes;
 using System;
 
 namespace ForumDEG.Models
@@ -15,5 +16,11 @@ namespace ForumDEG.Models
         public string Building { get; set; }
 
         public string ForumTheme { get; set; }
+
+        [ForeignKey(typeof(Form))]
+        public string FormId { get; set; }
+
+        [OneToOne]
+        public Form Form { get; set; }
     }
 }
