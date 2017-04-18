@@ -1,5 +1,7 @@
-﻿using ForumDEG.Models;
+﻿using Android.Util;
+using ForumDEG.Models;
 using SQLite;
+using SQLite.Extensions;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -11,8 +13,10 @@ namespace ForumDEG.Utils
 
         public CoordinatorDatabase(string databasePath)
         {
+            Log.Info("CoordinatorDatabase", "creating async database");
             _database = new SQLiteAsyncConnection(databasePath);
 
+            Log.Info("CoordinatorDatabase", "creating coordinator database");
             _database.CreateTableAsync<Coordinator>().Wait();
         }
 

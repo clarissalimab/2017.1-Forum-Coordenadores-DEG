@@ -1,4 +1,5 @@
-﻿using ForumDEG.Models;
+﻿using Android.Util;
+using ForumDEG.Models;
 using SQLite;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -11,8 +12,10 @@ namespace ForumDEG.Utils
 
         public ForumDatabase(string databasePath)
         {
+            Log.Info("ForumDatabase", "creating async database");
             _database = new SQLiteAsyncConnection(databasePath);
 
+            Log.Info("ForumDatabase", "creating Forum database");
             _database.CreateTableAsync<Forum>().Wait();
         }
 

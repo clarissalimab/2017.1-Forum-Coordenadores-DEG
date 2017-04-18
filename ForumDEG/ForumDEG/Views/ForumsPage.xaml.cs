@@ -1,4 +1,5 @@
-﻿using ForumDEG.Models;
+﻿using Android.Util;
+using ForumDEG.Models;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -9,6 +10,7 @@ namespace ForumDEG.Views
     {
         public ForumsPage()
         {
+            Log.Info("ForumsPage", "Entrando na pagina");
             InitializeComponent();
             this.Title = "Forum List";
 
@@ -17,23 +19,28 @@ namespace ForumDEG.Views
             };
 
             toolbarItem.Clicked += async (sender, e) => {
+                Log.Info("ForumsPage", "Entrando na pagina de adição");
                 await Navigation.PushAsync(new ForumAddPage() { BindingContext = new Forum()});
             };
 
+            Log.Info("ForumsPage", "Adicionando item clicado");
             ToolbarItems.Add(toolbarItem);
         }
 
         protected async override void OnAppearing()
         {
+            Log.Info("OnAppearing", "Setando coisas.");
             base.OnAppearing();
 
+            Log.Info("OnAppearing", "Pegando todos os forums");
             ForumListView.ItemsSource = await App.ForumDatabase.GetAllForums();
         }
 
         async void Forum_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             if(e.SelectedItem != null) {
-                await Navigation.PushAsync(new ForumAddPage() { BindingContext = e.SelectedItem as Forum });
+                Log.Info("Forum_ItemSelected", "Entrando na pagina de detalhes do forum");
+                await Navigation.PushAsync(new ForumPage() { BindingContext = e.SelectedItem as Forum });
             }
         }
     }

@@ -18,7 +18,7 @@ namespace ForumDEG.Models
         public string ForumTheme { get; set; }
 
         [ForeignKey(typeof(Form))]
-        public string FormId { get; set; }
+        public int FormId { get; set; }
 
         [OneToOne]
         public Form Form { get; set; }

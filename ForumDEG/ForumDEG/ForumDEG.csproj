@@ -38,7 +38,8 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="DAO\ForumAsksDatabase.cs" />
+    <Compile Include="DAO\FormAsksDatabase.cs" />
+    <Compile Include="DAO\FormDatabase.cs" />
     <Compile Include="DAO\ForumDatabase.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
@@ -53,6 +54,18 @@
     <Compile Include="DAO\CoordinatorDatabase.cs" />
     <Compile Include="DAO\AdministratorDatabase.cs" />
     <Compile Include="Utils\IntefaceSQLite.cs" />
+    <Compile Include="Views\ForumAddPage.xaml.cs">
+      <DependentUpon>ForumAddPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FormAddPage.xaml.cs">
+      <DependentUpon>FormAddPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ForumPage.xaml.cs">
+      <DependentUpon>ForumPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ForumsPage.xaml.cs">
+      <DependentUpon>ForumsPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\CoordinatorsPage.xaml.cs">
       <DependentUpon>CoordinatorsPage.xaml</DependentUpon>
     </Compile>
@@ -77,6 +90,9 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="Mono.Android">
+      <HintPath>..\..\..\..\..\..\Program Files\Microsoft Visual Studio\2017\Community\Common7\IDE\ReferenceAssemblies\Microsoft\Framework\MonoAndroid\v7.1\Mono.Android.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Newtonsoft.Json.6.0.8\lib\portable-net40+sl5+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -140,6 +156,30 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\CoordinatorsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\FormAddPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\ForumsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\ForumAddPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\ForumPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

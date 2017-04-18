@@ -11,19 +11,24 @@ using Xamarin.Forms.Xaml;
 namespace ForumDEG.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class ForumAddPage : ContentPage
+    public partial class FormAddPage : ContentPage
     {
-        public ForumAddPage()
+        public FormAddPage()
         {
             InitializeComponent();
         }
 
         async void Save_Clicked(object sender, System.EventArgs e) {
-            var coordForum = (Forum)BindingContext;
+			var coordForum = (Forum)BindingContext;
+            var forumForm = new Form();
 
-            coordForum.CreatedOn = DateTime.Now;
-            
+            forumForm.Id = 1;
+            forumForm.CreatedOn = DateTime.Now;
+            coordForum.FormId = forumForm.Id;
+
+            await App.FormDatabase.SaveForm(forumForm);
             await App.ForumDatabase.SaveForum(coordForum);
+
             await Navigation.PopAsync();
         }
 
