@@ -2254,6 +2254,7 @@ namespace ForumDEG.Droid
 			// aapt resource value: 0x7f020053
 			public const int avd_hide_password = 2130837587;
 			
+<<<<<<< Updated upstream
 			// aapt resource value: 0x7f020116
 			public const int avd_hide_password_1 = 2130837782;
 			
@@ -2275,6 +2276,11 @@ namespace ForumDEG.Droid
 			// aapt resource value: 0x7f02011b
 			public const int avd_show_password_3 = 2130837787;
 			
+=======
+			// aapt resource value: 0x7f020054
+			public const int avd_show_password = 2130837588;
+			
+>>>>>>> Stashed changes
 			// aapt resource value: 0x7f020055
 			public const int changepassword_icon = 2130837589;
 			
@@ -2813,7 +2819,17 @@ namespace ForumDEG.Droid
 			public const int notification_bg = 2130837767;
 			
 			// aapt resource value: 0x7f020108
+<<<<<<< Updated upstream
 			public const int notification_bg_low = 2130837768;
+=======
+			public const int notification_icon_background = 2130837768;
+			
+			// aapt resource value: 0x7f02010f
+			public const int notification_template_icon_bg = 2130837775;
+			
+			// aapt resource value: 0x7f020110
+			public const int notification_template_icon_low_bg = 2130837776;
+>>>>>>> Stashed changes
 			
 			// aapt resource value: 0x7f020109
 			public const int notification_bg_low_normal = 2130837769;
@@ -2822,6 +2838,7 @@ namespace ForumDEG.Droid
 			public const int notification_bg_low_pressed = 2130837770;
 			
 			// aapt resource value: 0x7f02010b
+<<<<<<< Updated upstream
 			public const int notification_bg_normal = 2130837771;
 			
 			// aapt resource value: 0x7f02010c
@@ -2853,6 +2870,18 @@ namespace ForumDEG.Droid
 			
 			// aapt resource value: 0x7f020113
 			public const int users_icon = 2130837779;
+=======
+			public const int plusbutton_icon = 2130837771;
+			
+			// aapt resource value: 0x7f02010c
+			public const int roundedbg = 2130837772;
+			
+			// aapt resource value: 0x7f02010d
+			public const int roundedbgdark = 2130837773;
+			
+			// aapt resource value: 0x7f02010e
+			public const int splashscreen = 2130837774;
+>>>>>>> Stashed changes
 			
 			static Drawable()
 			{
